@@ -1,0 +1,26 @@
+.feedbackbtn{
+  background-color: rgb(3, 3, 50);
+  color: white;
+}
+.feedbackbtn:active{
+  background-color: #291571;
+  color: white;
+}
+.iconclr{
+  color: #291571;
+  margin: 0px 5px;
+}
+
+.entirequizpart{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f6f7f8; 
+    border: 0px;
+}
+.uploadexcell{
+  background-color: rgb(217, 215, 215) !important;
+  border: 3px solid red;
+}
+.fc1{
+  border: 0px !important;
+  box-shadow: 1px 1px 10px 1px rgb(237, 235, 235) !important;
+  }

@@ -1,0 +1,46 @@
+.paperbtn{
+background-color: #fff;
+color: #291571 !important;
+border-radius: 10px;
+font-weight: 600;
+}
+.paperbtn:hover{
+    background-color: #291571;
+    color: white !important;
+    border-radius: 10px;
+    }
+.sidebardash{
+    background-color: #291571;
+    color: white !important; 
+    border-radius: 15px;  
+}
+.studtable{
+    border-radius: 10px !important;
+}
+.studtable th{
+    color: #fff !important;
+    font-size: 16px !important;
+}
+.studtable td{
+    color: #291571 !important;
+    font-size: 16px;
+}
+.navbarstudent{
+    background-color: #291571 !important;
+}
+.dashhead{
+    color: #291571;
+}
+/* Add border-radius to the table */
+.studtable {
+    border-radius: 10px;
+    overflow: hidden; /* Ensure the content doesn't overflow the rounded corners */
+    width: 100%;
+   
+  }
+  
+
+ 
+  
+  
+  

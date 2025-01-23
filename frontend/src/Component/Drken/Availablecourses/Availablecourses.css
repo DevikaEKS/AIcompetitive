@@ -1,0 +1,12 @@
+.bgfullpath {
+  height: 100vh;
+}
+
+option {
+  border: none !important;
+}
+
+.coursebutton {
+  background-color: #291571;
+  color: white;
+}

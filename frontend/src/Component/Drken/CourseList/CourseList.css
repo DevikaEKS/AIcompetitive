@@ -1,0 +1,82 @@
+.course-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+.course-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.inner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.course-image {
+  width: 100%;
+  max-width: 300px; /* Restrict max width for images */
+  height: auto;
+  border-radius: 10px;
+}
+
+.course-title {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .course-cards-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 cards per row for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .course-cards-container {
+    grid-template-columns: 1fr; /* 1 card per row for small screens */
+  }
+}
+
+.enroll-button-container {
+  text-align: center;
+  margin-top: 10px; /* Add spacing between the card content and button */
+}
+
+.enroll-button {
+  padding: 10px 20px; /* Button padding */
+  background-color: #291571; /* Button background color */
+  color: #ffffff; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.enroll-button:hover {
+  background-color: #003080; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.enroll-button:active {
+  background-color: #000820; /* Even darker blue when clicked */
+  transform: scale(0.95); /* Slightly shrink on click */
+}

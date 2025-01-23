@@ -1,0 +1,50 @@
+/* Default Navbar styling */
+.navpart {
+    color: #fff; 
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navpart1 {
+    color: #fff; 
+    text-decoration: none !important;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  /* Hover effect on navbar items */
+  .navpart:hover {
+    background-color: white;
+    color: #291571 !important; /* Text color changes to blue */
+  }
+  
+  /* Active link styling */
+  .navpart.active-link {
+    background-color: #291571;
+    color: white;
+  }
+  
+  /* Mobile and Desktop views for navbar items */
+  .navpart, .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  
+.logoken{
+  height: 60px !important;
+}
+
+/* Default dropdown item style */
+.dropdown-item {
+  color: #000; /* Default text color */
+  background-color: transparent; /* Default background */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect */
+.dropdown-item:hover {
+  color: darkblue !important; /* Text color on hover */
+  background-color: lightgray !important; /* Background color on hover */
+}
+
+

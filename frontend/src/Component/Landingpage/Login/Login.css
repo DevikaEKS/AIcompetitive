@@ -1,0 +1,143 @@
+.forget-password-link {
+  text-decoration: none;
+  color: #291571;
+  font-size: 12px;
+}
+.passlink {
+  color: grey;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 0px;
+  /* border-radius: 20px; */
+  background-color: #fff !important;
+}
+
+.form-group select{
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 0px ;
+  border-radius: 25px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.error-text {
+  color: #291571;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.logintxt {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.loginbg .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 35px !important;
+  box-sizing: border-box;
+  background-color: #fff !important;
+}
+
+.error-text {
+  color: red;
+  text-align: center;
+  margin-top: 5px;
+}
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link {
+  color: #291571;
+  cursor: pointer;
+}
+
+.logpara {
+  color: #291571;
+}
+
+.LoginApp{
+  background-color: transparent !important;
+  border: 0px !important;
+}
+.subbtn1{
+  background-color: #291571;
+  padding: 10px;
+  font-weight: 600;
+  color: #fff;
+  border: 2px solid #291571;
+}
+.subbtn1:hover{
+  background-color: #fff;
+  color: #291571;
+  border: 2px solid #291571;
+}
+
+.loginbg{
+ background-image: url("../Asset/loginbg.png"); 
+ height: 100vh;
+ background-repeat: no-repeat;
+}
+
+
+
+
+
+
+.line-with-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.line-with-text::before,
+.line-with-text::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #291571;
+  margin: 0 10px;
+}
+
+.line-with-text span {
+  white-space: nowrap;
+  color: #291571;
+  font-size: 16px;
+}
+.noaccounttext{
+  color: #291571;
+}

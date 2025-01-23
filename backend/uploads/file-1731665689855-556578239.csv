@@ -1,0 +1,2 @@
+content,options,correctAnswer
+A train 240 m long passes a pole in 24 seconds. How long will it take to pass a platform 650 m long?,"[{""option"": ""65 sec"", ""feedback"": """"}, {""option"": ""89 sec"", ""feedback"": """"}, {""option"": ""100 sec"", ""feedback"": """"}, {""option"": ""150 sec"", ""feedback"": """"}]",89 sec

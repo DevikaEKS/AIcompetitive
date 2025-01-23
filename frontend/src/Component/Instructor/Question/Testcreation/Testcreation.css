@@ -1,0 +1,19 @@
+.form-group select{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 0px !important;
+    border-radius: 25px;
+  }
+.bordertable{
+  border: 2px solid black !important;
+}
+input{
+  border: 1px solid black !important;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+  text-align: center;
+}

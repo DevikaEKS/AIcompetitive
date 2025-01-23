@@ -1,0 +1,71 @@
+.testbutton {
+  background-color: #12be4e;
+  color: white;
+  border-radius: 15px;
+}
+
+.majortest {
+  max-width: 650px !important;
+ 
+}
+
+.buying-table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+.buying-table td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.testbutton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.testbutton:hover {
+  background-color: #218838;
+}
+
+.enroll-btn {
+ 
+  color: #FCC100;
+  box-shadow: 1px 1px 1px #28a745;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: 500;
+}
+.enroll-btn:active {
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: 500;
+  background-color:#218838;
+}
+
+.enroll-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.purchase-section {
+  text-align: center;
+}
+
+.purchase-btn {
+  background-color: #218838;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.purchase-btn:hover {
+  background-color: #218838;
+}

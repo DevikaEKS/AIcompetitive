@@ -1,0 +1,14 @@
+.successtext{
+    color: #12BE4E;
+    font-size: 40px;
+}
+
+.cardbrd{
+    border: 1px solid #CDE5FF !important;
+    box-shadow: 0 4px 8px rgba(205, 229, 255, 0.6); /* Blue-tinted shadow */ 
+    border-radius: 25px !important;  
+}
+
+.okbutton{
+    font-weight: 700;
+}

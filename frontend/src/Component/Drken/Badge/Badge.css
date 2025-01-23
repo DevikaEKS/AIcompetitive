@@ -1,0 +1,43 @@
+.certificateparts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificatepara {
+    font-weight: bold;
+    color: #333;
+}
+
+.cetbg {
+    background-image: url('../../../Asset/Certificatebg.jpg'); /* Background image for the card */
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* Ensures sufficient height */
+    color: #333; /* Adjusts text color for readability */
+}
+
+.badgeimg {
+    width: 100px; /* Adjusts the badge image size */
+    margin-top: 1rem;
+}
+
+.cetbg h1, .cetbg h5, .cetbg p, .cetbg h3 {
+    margin: 0.5rem 0; /* Adjusts spacing for better readability */
+    color: #000; /* Ensures text stands out against background */
+}
+
+.cetbg a {
+    color: #007bff;
+    margin-top: 1rem;
+    text-decoration: none;
+}

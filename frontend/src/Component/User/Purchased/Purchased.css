@@ -1,0 +1,27 @@
+.paybutton{
+    background-color: #12BE4E;
+    color: #fff;
+    border-radius: 20px;
+}
+.purchasedhead{
+    color: #291571;
+    font-size: 24px;
+    font-weight: 600;
+}
+.purchase_para{
+    color: #291571;
+    font-weight: 500;
+    text-align: start;
+    
+}
+.tablepart td{
+    padding: 15px 0px !important;
+    background-color: #fff !important;
+}
+.purchasecard{
+    box-shadow: 1px 2px 10px #CDE5FF;
+    border: 0px !important;
+}
+.tablepart{
+    background-color: #fff !important;
+}

@@ -1,0 +1,56 @@
+
+
+.exampart {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #f1f7fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  box-shadow: 1px 2px 10px rgb(144, 183, 233);/* Center horizontally within the parent */
+}
+.exampartmain{
+  cursor: pointer;
+}
+.bannertxt{
+  color: #291571;
+}
+
+.exampart1 {
+  cursor: pointer;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto; 
+  box-shadow: 1px 2px 10px rgb(144, 183, 233);
+}
+
+.exampart1 img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image fits within the circle */
+}
+
+.examnames{
+  color: #291571;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.bannerpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full viewport height */
+  background-color: #f5f5f5; /* Optional background color */
+}
+
+
+

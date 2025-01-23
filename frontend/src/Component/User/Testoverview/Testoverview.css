@@ -1,0 +1,106 @@
+/* Sidebar Styles */
+.sidebar1 {
+    background-color: #f8f9fa;
+    height: 100vh;
+    padding: 1rem;
+    border: 1px solid rgb(220, 218, 218);
+    border-radius: 15px;
+  }
+  
+ /* Table Styling */
+.tablearea {
+    background-color: white !important; 
+    border-radius: 20px !important;
+   
+
+}
+  
+  .tablearea th{
+    background-color: #fff !important;
+    color: #291571 !important;
+    font-weight: 700;
+    border: 1px solid #ddd; 
+    padding: 10px;
+    border-radius: 20px !important;
+  }
+  .tablearea td{
+    color: #291571; 
+    padding: 0.75rem; 
+    border: 1px solid #ddd; 
+    padding: 10px;
+    border-radius: 20px !important;
+  }
+  
+  .tablearea th {
+    background-color: #f8f9fa; 
+    text-align: left; 
+  }
+  
+  .testoverviewpage{
+    color: #291571;
+    height: 100%;
+  }
+
+  .sidebar1 a {
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: #291571;
+  }
+  
+ 
+  /* Accordion Styles for Small Devices */
+  .accordion-menu {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+  }
+  
+  .accordion-toggle {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .accordion-content {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  .accordion-content a {
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .accordion-content a:hover {
+    color: #007bff;
+  }
+  
+  /* Content Section */
+  .contentpart {
+    padding: 2rem;
+  }
+
+  .sampletestarea{
+    border: 1px solid rgb(191, 188, 188);
+    border-radius: 15px;
+  }
+  
+  .Taketestbtn{
+    background-color: #6BFFB5;
+    color: #291571;
+    font-weight: 600;
+  }
+  @media (min-width: 992px) {
+    .accordion-menu {
+      display: none;
+    }
+  }
+  

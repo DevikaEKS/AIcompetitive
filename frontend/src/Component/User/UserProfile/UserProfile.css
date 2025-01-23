@@ -1,0 +1,21 @@
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+
+
+.dropdown-item{
+    color: red ;
+}
+
+th{
+    background-color: #291571 !important;
+}
+
+th a{
+    color: #fff !important;
+    text-decoration: none;
+}
+
+
