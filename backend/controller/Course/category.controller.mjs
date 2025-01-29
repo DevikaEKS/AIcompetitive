@@ -118,13 +118,12 @@ export const getCoursesBySubCategoryId = (req, res) => {
 
   // Query to fetch courses by sub_category_id
   const query = `
-    SELECT 
-      courseid, 
-      coursename 
+    SELECT  
+      course_name 
     FROM 
-      courses 
+      subcourses 
     WHERE 
-      course_category_id = ?
+      sub_category_id = ?
   `;
 
   db.query(query, [sub_category_id], (err, results) => {

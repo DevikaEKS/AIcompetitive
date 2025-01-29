@@ -1,11 +1,13 @@
 import express from "express";
 import {
+  addAiQuestion,
   addBulkQuestion,
   addQuestion,
   createQuiz,
   createQuizAttempt,
   downloadSampleQuestionFormat,
   fetchQuizQuestions,
+  getAiQuestion,
   getPracticeTestDifficulty,
   getQuestion,
   getQuestionByModule,
@@ -25,10 +27,12 @@ import upload from "../../middleware/fileUpload.mjs";
 const router = express.Router();
 
 router.post("/addquestion", addQuestion);
+router.post('/addAiquestion',addAiQuestion)
 router.post("/uploadquestions", upload.single("file"), addBulkQuestion);
 router.get("/download-sample", downloadSampleQuestionFormat);
 
 router.get("/getquestion", getQuestion);
+router.get("/getAiQuestion", getAiQuestion);
 router.get("/getmodulequestions/:moduleId", getQuestionByModule);
 router.post("/updatequestion", updateQuestionByModule);
 router.get("/questions/:course/:module", getQuestionsByModuleAndCourse);
@@ -40,7 +44,7 @@ router.post("/savequiz/:user_id/:ass_id/:module", saveQuizAttempt);
 
 router.get("/getcorrectanswers/:courseid/:moduleid", getQuestionsWithAnswers);
 
-// -----------------------------------------------------------------
+// ------------------------------------------------------------------
 
 router.post("/createtest", upload.single("image"), testCreation);
 router.post("/practicetest", practiceTestCreation);

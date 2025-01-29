@@ -112,7 +112,7 @@ function App() {
           <Route path="/business_register" element={<CompanyRegister />} />
           {/* <Route path="/std" element={<Studentdashboard />} /> */}
           {/* <Route path="/" element={[<Menubar />, <Banner />, <Footer />]} /> */}
-          <Route path="/banner/:id" element={[<Competitivenavbar />, <Banner />]}/>
+          <Route path="/" element={[<Competitivenavbar />, <Banner />]}/>
           <Route path="/mytest/:id" element={[<Competitivenavbar />, <Mytest />]}/>
           <Route path="/enrolled/:id" element={[<Competitivenavbar />, <Enrolled />]}/>
           <Route path="/exams/:id/:sub" element={[<Competitivenavbar />, <CourseBuying />]}/>

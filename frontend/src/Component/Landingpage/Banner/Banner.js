@@ -21,21 +21,59 @@ function Banner() {
       });
   }, [id]);
 
-  // Fetch categories based on certificate ID
   useEffect(() => {
-    if (certificateId) {
-      axios
-        .get(
-          `${process.env.REACT_APP_API_URL}category/subcategories/${certificateId}`
-        )
-        .then((res) => {
-          setCategories(res.data.categories); // Set the categories data
-        })
-        .catch((error) => {
-          console.error("Error fetching categories:", error);
-        });
-    }
-  }, [certificateId]);
+
+    // const fetchCategory = async () => {
+    //   try {
+    //     const response = await fetch('http://localhost:5000/category/getcategory'); // Adjust the API URL if necessary
+    //     console.log(response);
+    
+    //     if (!response.ok) {
+    //       throw new Error('Failed to fetch bus data');
+    //     }
+    
+    //     const data = await response.json();
+    //     console.log(data);
+    //     setCategories(data);
+    //   } catch (err) {
+    //     console.error("Error fetching categories:", err);
+    //   }
+    // };
+    
+    // fetchCategory();
+    axios
+      .get(
+        `${process.env.REACT_APP_API_URL}category/getcategory`
+      )
+      .then((res) => {
+        setCategories(res.data.result); // Set the categories data
+      })
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+      });
+  }
+, []);
+
+// console.log(categories);
+
+
+
+
+  // // Fetch categories based on certificate ID
+  // useEffect(() => {
+  //   if (certificateId) {
+  //     axios
+  //       .get(
+  //         `${process.env.REACT_APP_API_URL}category/subcategories/${certificateId}`
+  //       )
+  //       .then((res) => {
+  //         setCategories(res.data.categories); // Set the categories data
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching categories:", error);
+  //       });
+  //   }
+  // }, [certificateId]);
 
   // Function to handle the enroll button click
   const handleEnroll = (categoryId) => {
