@@ -28,8 +28,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 // app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'http://192.168.252.235:3000', process.env.DOMAIN], // Replace with your client URL
-    credentials: true, // Allow credentials (cookies)
+
   })
 );
 

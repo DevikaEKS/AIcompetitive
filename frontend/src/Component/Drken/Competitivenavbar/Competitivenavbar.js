@@ -8,6 +8,7 @@ import "./Competitivenavbar.css";
 import axios from "axios";
 
 function Competitivenavbar() {
+  const [dropcategory,setSelectedDropcategory]=useState([]);
   const [showSearch, setShowSearch] = useState(false);
   const [dropdownItems, setDropdownItems] = useState([]);
   const { id } = useParams();
@@ -19,32 +20,7 @@ function Competitivenavbar() {
   const toggleSearch = () => {
     setShowSearch((prev) => !prev);
   };
-
-  useEffect(() => {
-    // Fetch certificate ID and set dropdown items based on certificate ID
-    const fetchCertificateId = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}user/user/data/${id}`
-        );
-        const certificateId = response.data.user.certificate_id;
-        const crname=response.data.user.name
-   
-        if (certificateId === 1) {
-        
-          setDropdownItems(["AWS"]);
-        } else if (certificateId === 2) {
-         
-          setDropdownItems(["Railways"]);
-        }
-      } catch (error) {
-        console.error("Error fetching certificate ID:", error);
-      }
-    };
-
-    fetchCertificateId();
-  }, [id]);
-
+  
   return (
     <Navbar expand="lg" className="navbarcontenttext">
       <Container>
@@ -60,17 +36,17 @@ function Competitivenavbar() {
           <Nav className="d-lg-none mx-auto">
             <Nav.Link
               as={NavLink}
-              to={`/banner/${id}`}
+              to={`/`}
               className="navpart px-3"
               activeClassName="active-link">
               Home
             </Nav.Link>
             <Nav.Link
               as={NavLink}
-              to={`/mytest/${id}`}
+              to={`/Testview`}
               className="navpart px-3"
               activeClassName="active-link" >
-             Exams
+             Exam Details
             </Nav.Link>
       <Dropdown onSelect={handleSelect} className="px-3">
       <Dropdown.Toggle
@@ -78,28 +54,11 @@ function Competitivenavbar() {
         className="navpart1 text-light fw-bold">
         {selectedOption}
       </Dropdown.Toggle>
-
       <Dropdown.Menu>
         <Dropdown.Item eventKey="Government Exams" className="test-dark">Government Exams</Dropdown.Item>
         <Dropdown.Item eventKey="Global Certifications" className="test-dark">Global Certifications</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-
-            {/* <Dropdown>
-              <Dropdown.Toggle
-                variant="link"
-                className="navpart px-3 text-light"
-              >
-                  {id === "1" ? "Government Exams" : "Global Certifications"}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                {dropdownItems.map((item, index) => (
-                  <Dropdown.Item key={index} href="#">
-                    {item}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown> */}
 
             <Nav.Link
               as={NavLink}
@@ -137,16 +96,16 @@ function Competitivenavbar() {
           <Nav className="w-100 d-none d-lg-flex align-items-center justify-content-between">
             <div className="d-flex flex-grow-1 justify-content-center">
               <NavLink
-                to={`/banner/${id}`}
+                to={`/`}
                 className="navpart px-3"
                 activeClassName="active-link" >
                 Home
               </NavLink>
               <NavLink
-                to={`/mytest/${id}`}
+                to={`/Testview`}
                 className="navpart px-3"
                 activeClassName="active-link" >
-              Exams
+              Exam Details
               </NavLink>
               <Dropdown onSelect={handleSelect}>
       <Dropdown.Toggle
@@ -154,28 +113,11 @@ function Competitivenavbar() {
         className="navpart1 px-3 text-light fw-bold">
         {selectedOption}
       </Dropdown.Toggle>
-
       <Dropdown.Menu>
-        <Dropdown.Item eventKey="Government Exams">Government Exams</Dropdown.Item>
+        <Dropdown.Item eventKey="Government Exams" >Government Exams</Dropdown.Item>
         <Dropdown.Item eventKey="Global Certifications">Global Certifications</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-              {/* <Dropdown>
-                <Dropdown.Toggle
-                  variant="link"
-                  className="navpart1 px-3 text-light fw-bold">
-                  {id === "1" ? "Government Exams" : "Global Certifications"}
-                 
-               
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {dropdownItems.map((item, index) => (
-                    <Dropdown.Item key={index} href="#">
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown> */}
             </div>
             {showSearch && (
               <div className="search-bar d-flex align-items-center p-2 bg-light rounded">
@@ -183,8 +125,7 @@ function Competitivenavbar() {
                 <input
                   type="search"
                   placeholder="Search"
-                  className="border-0 searchinput bg-light"
-                />
+                  className="border-0 searchinput bg-light"/>
               </div>
             )}
             <Nav.Link onClick={toggleSearch} className="ms-3">

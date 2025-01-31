@@ -1,6 +1,6 @@
 // routes/authRoutes.js
 import express from "express";
-const router = express.Router();
+const router = express.Router(); 
 import {
   checkToken,
   forgotPassword,

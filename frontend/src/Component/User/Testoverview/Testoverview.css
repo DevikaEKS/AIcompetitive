@@ -1,4 +1,4 @@
-/* Sidebar Styles */
+
 .sidebar1 {
     background-color: #f8f9fa;
     height: 100vh;
@@ -7,7 +7,7 @@
     border-radius: 15px;
   }
   
- /* Table Styling */
+
 .tablearea {
     background-color: white !important; 
     border-radius: 20px !important;
@@ -49,7 +49,6 @@
   }
   
  
-  /* Accordion Styles for Small Devices */
   .accordion-menu {
     background-color: #f8f9fa;
     border-bottom: 1px solid #ddd;
@@ -83,13 +82,12 @@
     color: #007bff;
   }
   
-  /* Content Section */
+
   .contentpart {
     padding: 2rem;
   }
 
   .sampletestarea{
-    border: 1px solid rgb(191, 188, 188);
     border-radius: 15px;
   }
   
@@ -104,3 +102,62 @@
     }
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Sidebar for Small Devices */
+.sidebar-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  z-index: 999;
+}
+
+.sidebar-toggle {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.sidebar-content a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #444;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sidebar-content a:hover {
+  background-color: #007bff;
+}
+
+@media (max-width: 992px) {
+  .sidebar1 {
+    display: none; /* Hide sidebar for small devices */
+  }
+}

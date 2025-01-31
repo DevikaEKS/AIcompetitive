@@ -12,25 +12,6 @@ function DrmenubarUser() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // useEffect(() => {
-  //   const verifyToken = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `${process.env.REACT_APP_API_URL}auth/protected`,
-  //         {
-  //           withCredentials: true,
-  //         }
-  //       );
-  //       console.log("Token is valid:", response.data);
-  //     } catch (error) {
-  //       console.error("Token verification error:", error);
-  //       navigate("/login");
-  //     }
-  //   };
-
-  //   verifyToken();
-  // }, [navigate]);
-
   const handleLogout = async () => {
     try {
       await axios.post(

@@ -3,6 +3,7 @@ import "./BuyingPage.css";
 import axios from "axios";
 import coins from "../Asset/coins.png"; // Ensure the correct path for the coin image
 import { useNavigate, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 function BuyingPage() {
   const [content, setContent] = useState([]); // State to store the API data
@@ -10,15 +11,13 @@ function BuyingPage() {
   const [totalPrice, setTotalPrice] = useState(0); // Track the total price
   const [isEnrolled, setIsEnrolled] = useState(false); // State to track if the user has clicked Enroll
   const navigate = useNavigate();
-
   const { id, course } = useParams();
 
   useEffect(() => {
-    // Fetch the quiz types from the API
     axios
       .get(`${process.env.REACT_APP_API_URL}course/sidebar`)
       .then((res) => {
-        setContent(res.data.data); // Update state with API data
+        setContent(res.data.data); 
       })
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
@@ -27,8 +26,9 @@ function BuyingPage() {
 
   // Function to handle Sample Test button click
   const handleSampleTestClick = (quizTypeId) => {
+    navigate(`/q`)
     // navigate(`/quizattempt/${id}/${course}/${quizTypeId}`);
-    navigate(`/terms/${id}`) 
+    // navigate(`/terms/${id}`) 
   };
   
 
@@ -37,8 +37,6 @@ function BuyingPage() {
   //   navigate(`/terms/${id}`); 
   // };
   
-
-
 
   // Handler for checkbox change
   const handleCheckboxChange = (quizId, isChecked, type) => {
@@ -74,7 +72,7 @@ function BuyingPage() {
     if (selectedQuizzes.length > 0) {
       setIsEnrolled(true); // Set the Enrolled state to true when button is clicked
     } else {
-      alert("Please select at least one quiz to enroll.");
+      toast.warning("Select at least one quiz to enroll.")
     }
   };
 
@@ -222,6 +220,7 @@ function BuyingPage() {
           </button>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 }

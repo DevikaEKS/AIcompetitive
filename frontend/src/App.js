@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState } from "react";
 import Login from "./Component/Landingpage/Login/Login";
 import RegisterPage from "./Component/Landingpage/Register/Register";
 import { Footer } from "./Component/Footer/Footer";
@@ -69,7 +70,7 @@ import ResetPassword from "./Component/Landingpage/ResetPassword/ResetPassword";
 import SubModule from "./Component/Instructor/SubModule/SubModule";
 import Testcreation from "./Component/Instructor/Question/Testcreation/Testcreation";
 import UserCourseList from "./Component/Drken/CourseList/CourseList";
-import PracticeTest, {CourseDashBoard,MockTest,OldQuestionTest, QuizTest} from "./Component/Drken/CoursePart/CoursePart";
+// import PracticeTest, {CourseDashBoard,MockTest,OldQuestionTest, QuizTest} from "./Component/Drken/CoursePart/CoursePart";
 import Modulesidebar from "./Component/Student/modulesidebar/Modulesidebar";
 import Drkendashboard from "./Component/Drken/Drkendashboard/Drkendashboard";
 import Dashboarduser from "./Component/Drken/Dashboarduser/Dashboarduser";
@@ -93,29 +94,27 @@ import Testoverview from "./Component/User/Testoverview/Testoverview";
 import Termspage from "./Component/User/Termspage/Termspage";
 import Starttest from "./Component/User/Starttest/Starttest";
 import AIpart from "./Component/Instructor/Question/AIpart/AIpart";
-
-// import Testdashboard from "./Component/User/Testdashboard/Testdashboard";
-// import Examspart from "./Component/User/Examspart/Examspart";
-// import Examsidepart from "./Component/User/Examsidpart/Examsidepart";
-// import RichTextEditor from './Component/Instructor/Richtexteditor/Richtexteditor';
+import Quizview from "./Component/Competitive/Quizview/Quizview";
+import OverallTestview from "./Component/User/OverallTestview/OverallTestview";
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState("Government Exams");
   return (
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={[<Competitivenavbar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>, <Banner selectedCategory={selectedCategory}/>]}/>
+          <Route path="/q" element={[<Competitivenavbar />,<Quizview/>]}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/forgot_password" element={<ForgotPassword />} />
           <Route path="/reset_password/:token" element={<ResetPassword />} />
           <Route path="/inv_register/:id" element={<InvitedRegister />} />
           <Route path="/business_register" element={<CompanyRegister />} />
-          {/* <Route path="/std" element={<Studentdashboard />} /> */}
-          {/* <Route path="/" element={[<Menubar />, <Banner />, <Footer />]} /> */}
-          <Route path="/" element={[<Competitivenavbar />, <Banner />]}/>
+
           <Route path="/mytest/:id" element={[<Competitivenavbar />, <Mytest />]}/>
           <Route path="/enrolled/:id" element={[<Competitivenavbar />, <Enrolled />]}/>
-          <Route path="/exams/:id/:sub" element={[<Competitivenavbar />, <CourseBuying />]}/>
+          <Route path="/subcourse/:sub" element={[<Competitivenavbar />, <CourseBuying />]}/>
           <Route path="/exams/payment/:id/:course" element={[<Competitivenavbar />, <BuyingPage />]}/>
           <Route path="/timer/:id/:course/:quizTypeId" element={<TimerPage/>} />
           <Route path="/quizattempt/:id/:course/:quiz_type" element={[<Competitivenavbar />, <QuizPage />]} />
@@ -127,7 +126,6 @@ function App() {
             <Route path="dashboard" element={<SuperDashboard />} />
             <Route path="approve" element={<Approve />} />
           </Route>
-
           <Route path="/admindashboard/:id*" element={<Admindashboard />}>
             <Route path="coursedetail" element={<CourseDetail />} />
             <Route path="courseupdate" element={<Courseupdation />} />
@@ -187,10 +185,10 @@ function App() {
           <Route path="/user/:id/message" element={[<DrmenubarUser />, <DashBoardMessage />]}/>
           <Route path="/user/:id/payment" element={[<DrmenubarUser />, <DashBoardPayment />]}/>
           <Route path="/user/:id/editprofile" element={<Edit />} />
-          <Route path="/user/:id/dash/:courseid" element={<CourseDashBoard />}/>
-          <Route path="/user/:id/:courseid/practice/:quiz" element={<PracticeTest />}/>
-          <Route path="/user/:id/:courseid/mock/:quiz" element={<MockTest />} />
-          <Route path="/user/:id/:courseid/old-questions/:quiz" element={<OldQuestionTest />} />
+          {/* <Route path="/user/:id/dash/:courseid" element={<CourseDashBoard />}/> */}
+          {/* <Route path="/user/:id/:courseid/practice/:quiz" element={<PracticeTest />}/> */}
+          {/* <Route path="/user/:id/:courseid/mock/:quiz" element={<MockTest />} /> */}
+          {/* <Route path="/user/:id/:courseid/old-questions/:quiz" element={<OldQuestionTest />} /> */}
           {/* <Route path="/testpart/" element={<Testdashboard/>}> */}
           {/* <Route path="examspart" element={<Examspart/>}/> */}
           {/* </Route> */}  
@@ -200,13 +198,15 @@ function App() {
             <Route path="dash/:courseid" element={<TestMock />} />
             <Route path="addsubmodule" element={<SubModule />} />
             <Route path=":courseid/practice/:quiz" element={<TestPractice />} />
-            <Route path="quiz/:insertid" element={<QuizTest />} />
+            {/* <Route path="quiz/:insertid" element={<QuizTest />} /> */}
             {/* <Route path=":courseid/mock/:quiz" element /> */}
           </Route>
+<Route path="/Testview" element={[<Competitivenavbar/>,<OverallTestview/>]}/>
 <Route path="/testoverview" element={[<Competitivenavbar/>,<Testoverview/>]}/>
 <Route path="/terms/:id" element={[<Competitivenavbar/>,<Termspage/>]}/>
 <Route path="/starttest/:id" element={[<Competitivenavbar/>,<Starttest/>]}/>
 <Route path="/ai" element={<AIpart/>}/>
+<Route path="*" element={[<Competitivenavbar/>,<Banner/>]}/>
         </Routes>
       </BrowserRouter>
     </div>

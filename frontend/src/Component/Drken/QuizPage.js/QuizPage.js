@@ -308,18 +308,7 @@ function QuizPage() {
       [questionId]: value,
     }));
     setAnsweredQuestions((prev) => new Set([...prev, currentIndex]));
-
-
-
-
-
-
-
-
-
-
-
-    
+  
   };
 
   const validateAnswer = (questionId) => {
