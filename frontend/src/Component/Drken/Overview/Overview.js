@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "./Overview.css";
-
 function Overview() {
   const [selectedStory, setSelectedStory] = useState("jimsStory");
 

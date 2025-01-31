@@ -144,25 +144,7 @@ function TestPractice() {
   </div>
 )}
 
-{/* {selectedSubmodules.length > 0 && (
-  <div>
-    <label><b>Selected Submodules</b></label>
-      {selectedSubmodules.map((submodule) => (
-        <table>
-          <tr key={submodule.id}>
-            <td>{submodule.name}{" "}</td>
-            <td>
-            <button
-            onClick={() => handleRemoveSubmodule(submodule.id)}
-            className="btn btn-danger btn-sm ml-2">
-            Remove
-          </button>
-            </td>
-          </tr>         
-        </table>   
-      ))}   
-  </div>
-)} */}
+
 
 {selectedSubmodules.length > 0 && (
   <div className="mt-3">
