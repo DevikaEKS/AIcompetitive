@@ -39,6 +39,6 @@ const gemini = async (topic) => {
 };
 
 // Replace 'Percentage' with the desired topic.
-gemini("Ratio and Proportion");
+gemini("Ratio");
 
 export default gemini;
