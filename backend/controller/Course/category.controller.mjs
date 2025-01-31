@@ -117,16 +117,15 @@ export const getCoursesBySubCategoryId = (req, res) => {
   }
 
   // Query to fetch courses by sub_category_id
-  const query = `
-    SELECT 
-      courseid, 
-      coursename 
-    FROM 
-      courses 
-    WHERE 
-      course_category_id = ?
-  `;
 
+  const query = `
+  SELECT  
+    course_name 
+  FROM 
+    subcourses 
+  WHERE 
+    sub_category_id = ?
+`;
   db.query(query, [sub_category_id], (err, results) => {
     if (err) {
       console.error("Error fetching courses:", err);

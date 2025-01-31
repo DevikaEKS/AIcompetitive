@@ -5,8 +5,7 @@ import axios from "axios";
 import coins from "../Asset/coins.png";
 
 function CourseBuying() {
-  const { id, sub } = useParams(); // Get the `id` and `sub` params from the URL
-
+  const { sub } = useParams(); // Get the `sub` parameter from the URL
   const [courses, setCourses] = useState([]); // State to store the courses
 
   // Fetch courses based on the `sub` parameter
@@ -14,34 +13,32 @@ function CourseBuying() {
     axios
       .get(`${process.env.REACT_APP_API_URL}category/subcourses/${sub}`)
       .then((res) => {
-        console.log(res.data.courses); // Log the courses from the API
-        setCourses(res.data.courses); // Update the courses state with the data
+        setCourses(res.data.courses || []); // Update the courses state
       })
       .catch((error) => {
         console.error("Error fetching courses:", error); // Handle errors
       });
-  }, [sub]); // Dependency array, refetch courses if `sub` changes
+  }, [sub]);
 
   return (
     <div className="container majortest">
       {/* Dynamically render the courses */}
       {courses.length > 0 ? (
-        courses.map((course) => (
+        courses.map((course, index) => (
           <Link
-            key={course.courseid}
-            to={`/exams/payment/${id}/${course.courseid}`} // Construct dynamic URL for navigation
-            className="text-decoration-none"
-          >
+            key={index}
+            to={`/exams/payment/${sub}/${index + 1}`} // Dynamic URL for navigation
+            className="text-decoration-none">
             <div className="testpart my-3 p-2 rounded-3 d-flex justify-content-between align-items-center">
               <span className="px-3 d-flex align-items-center">
-                {course.coursename}
+                {course.course_name}
               </span>
               <img src={coins} alt="Coins" />
             </div>
           </Link>
         ))
       ) : (
-        <p>No courses available.</p> // Display a message if no courses are returned
+        <p>No courses available.</p> 
       )}
     </div>
   );

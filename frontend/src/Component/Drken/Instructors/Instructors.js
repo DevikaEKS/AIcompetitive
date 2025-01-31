@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import DrKen from "../../../Asset/face.png";
 import "./Instructor.css";
-import cert1 from "../../../Asset/boardcert.jpg";
-import cert2 from "../../../Asset/Rotatingspine.gif";
-import cert3 from "../../../Asset/HSS.jpg";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,9 +16,7 @@ function Instructors() {
     <div className="container certparts">
       <div className="row">
         <h1 className="authortext my-5 text-center">Author Introduction</h1>
-        <div className="col-sm-12 col-lg-6"  data-aos="fade-right" data-aos-offset="30" data-aos-easing="ease-in-sine" data-aos-duration="200">
-          <img src={DrKen} alt="About Dr.Ken Hansraj,M.D" className="drimg" />
-        </div>
+    
         <div className="col-sm-12 col-lg-6 aboutDr mt-5" data-aos="fade-left" data-aos-offset="30" data-aos-easing="ease-in-sine" data-aos-duration="200">
           <h2 className="Drtext my-4">Dr.Ken Hansraj,M.D</h2>
           <p className="abtken">
@@ -60,10 +56,7 @@ function Instructors() {
         <div className="col-sm-12 col-lg-6" data-aos="flip-left" data-aos-offset="30" data-aos-easing="ease-in-sine" data-aos-duration="600">
           <div className="certificatecards  rounded-4">
             <div className="row px-0 px-md-2 py-4">
-              <div className="col text-center">
-                <h3 className="certifiedheading my-2">Professional Training</h3>
-                <img src={cert3} className="imparts" data-aos="zoom-in-up" data-aos-offset="30" data-aos-easing="ease-in-sine" data-aos-duration="1000"/>
-              </div>
+              
             </div>
 
             <div className="text-start mx-4">
@@ -102,12 +95,7 @@ function Instructors() {
         <div className="col-sm-12 col-lg-6" data-aos="flip-right" data-aos-offset="30" data-aos-easing="ease-in-sine" data-aos-duration="600">
           <div className="rounded-4 certificatecards">
             <div className="row rounded-3 px-2 py-2">
-              <div className="col text-center">
-                <h3 className="certifiedheading mt-4">
-                  Board Certifications
-                </h3>
-                <img src={cert1} className="imparts" data-aos="zoom-in-up" data-aos-offset="30" data-aos-easing="ease-in-sine" data-aos-duration="1000"/>
-              </div>
+             
             </div>
             <div className="text-start px-5">
               <ul>
@@ -138,9 +126,7 @@ function Instructors() {
                   </ul>
                 </div>
               </div>
-              <div className="col-sm-4 order-1 order-lg-2 d-flex justify-content-center" data-aos="fade-in-down" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="200">
-                <img src={cert2} className="sm-mt-0 md-mt-5 imparts1 imp1"/>
-              </div>
+             
             </div>
           </div>
         </div>
