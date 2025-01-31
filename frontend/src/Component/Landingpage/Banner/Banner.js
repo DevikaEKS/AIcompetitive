@@ -22,7 +22,7 @@ function Banner() {
         console.error("Error fetching categories:", err);
         setLoading(false);
       });
-  }, []);
+
 
   const handleEnroll = (categoryId) => {
     navigate(`/subcourse/${categoryId}`);

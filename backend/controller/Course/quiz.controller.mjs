@@ -17,6 +17,17 @@ export const getQuestion = (req, res) => {
   });
 };
 
+export const getAiQuestion = (req, res) => {
+  const sql = `select * from ai_quiz_text`;
+  db.query(sql, (err, result) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(result);
+    }
+  });
+};
+
 export const addQuestion = (req, res) => {
   upload.single("file")(req, res, (err) => {
     if (err) {
@@ -155,6 +166,33 @@ export const addQuestion = (req, res) => {
     });
   });
 };
+
+export const addAiQuestion = (req, res) => {
+  const quizzes = req.body; // Expecting an array of quizzes
+
+    // Validate the input
+    if (!Array.isArray(quizzes) || quizzes.length === 0) {
+        return res.status(400).json({ message: "Invalid input. Please provide an array of quizzes." });
+    }
+
+    const query = "INSERT INTO ai_quiz_text (text, `option`, correct_answer) VALUES ?";
+
+    // Prepare values for bulk insertion
+    const values = quizzes.map((quiz) => [
+        quiz.question,
+        JSON.stringify(quiz.options), // Convert options to JSON string
+        quiz.correctAnswer
+    ]);
+
+    db.query(query, [values], (err, result) => {
+        if (err) {
+            console.error("Error inserting quizzes:", err);
+            return res.status(500).json({ message: "Failed to insert quizzes.", error: err });
+        }
+
+        res.status(200).json({ message: "Quizzes added successfully.", insertedRows: result.affectedRows });
+    });
+}
 
 export const addBulkQuestion = (req, res) => {
   console.log("Bulk Questions");

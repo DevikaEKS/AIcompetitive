@@ -111,7 +111,7 @@ function App() {
           <Route path="/reset_password/:token" element={<ResetPassword />} />
           <Route path="/inv_register/:id" element={<InvitedRegister />} />
           <Route path="/business_register" element={<CompanyRegister />} />
-          <Route path="/qp" element={[<Competitivenavbar />, <QuizPage />]} />
+
           <Route path="/mytest/:id" element={[<Competitivenavbar />, <Mytest />]}/>
           <Route path="/enrolled/:id" element={[<Competitivenavbar />, <Enrolled />]}/>
           <Route path="/subcourse/:sub" element={[<Competitivenavbar />, <CourseBuying />]}/>
