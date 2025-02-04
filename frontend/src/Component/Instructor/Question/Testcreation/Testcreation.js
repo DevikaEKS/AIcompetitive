@@ -134,7 +134,7 @@ function Testcreation() {
           (submodule) => submodule.submodule_id === submoduleToAdd.submodule_id
         ); 
        
-        if (!isAlreadyAdded) {
+        if (isAlreadyAdded) {
           // Add submodule to the array with default question counts
           setAddedSubmodules((prev) => [
             ...prev,
