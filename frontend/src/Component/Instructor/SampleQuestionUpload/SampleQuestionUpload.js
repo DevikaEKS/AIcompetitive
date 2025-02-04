@@ -9,7 +9,7 @@ function SampleQuestionUpload() {
   const [certificates, setCertificates] = useState([]); // To store certificates data
   const [certificateId, setCertificateId] = useState(""); // Selected certificate id
   const [categories, setCategories] = useState([]); // To store categories data
-  const [subCategoryId, setSubCategoryId] = useState(""); // Selected subcategory id
+  const [subCategoryId, setSubCategoryId] = useState([]); // Selected subcategory id
   const [courses, setCourses] = useState([]); // To store courses data
   const [courseId, setCourseId] = useState(0);
   const [questionType, setQuestionType] = useState(0);
@@ -53,17 +53,25 @@ function SampleQuestionUpload() {
   useEffect(() => {
     if (subCategoryId) {
       axios
-        .get(
-          `${process.env.REACT_APP_API_URL}category/subcourses/${subCategoryId}`
-        )
-        .then((res) => {
-          setCourses(res.data.courses);
-        })
-        .catch((error) => {
-          console.error("Error fetching courses:", error);
-        });
+        .get(`http://localhost:5000/subcourses/${subCategoryId}`)
+        .then((response) => setCourses(response.data.courses)) // Update courses state
+        .catch((error) => console.error("Error fetching courses:", error));
     }
   }, [subCategoryId]);
+  // useEffect(() => {
+  //   if (subCategoryId) {
+  //     axios
+  //       .get(
+  //         `${process.env.REACT_APP_API_URL}category/subcourses/${subCategoryId}`
+  //       )
+  //       .then((res) => {
+  //         setCourses(res.data.courses);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching courses:", error);
+  //       });
+  //   }
+  // }, [subCategoryId]);
 
   // Handle select change for certificate
   const handleCertificateChange = (e) => {
@@ -79,7 +87,7 @@ function SampleQuestionUpload() {
 
   // Handle select change for course
   const handleCourseChange = (e) => {
-    setCourseId(e.target.value);
+    setSubCategoryId(e.target.value);
   };
 
   // Handle select change for question type

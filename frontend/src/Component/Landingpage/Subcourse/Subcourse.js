@@ -10,7 +10,7 @@ function Subcourse() {
   useEffect(() => {
     // Fetch subcourses based on the category ID
     axios
-      .get(`http://localhost:5000/category/subcourses/${categoryId}`)
+      .get(`http://localhost:5000/course/getcourse/${categoryId}`)
       .then((res) => setSubcourse(res.data))
       .catch((err) => console.log(err)); // Catch errors
   }, [categoryId]);  // Run the effect when categoryId changes

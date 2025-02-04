@@ -80,7 +80,7 @@ import Banner from "./Component/Landingpage/Banner/Banner";
 import Competitivenavbar from "./Component/Drken/Competitivenavbar/Competitivenavbar";
 import Mytest from "./Component/Landingpage/Mytest/Mytest";
 import Enrolled from "./Component/Landingpage/Enrolled/Enrolled";
-import CourseBuying from "./Component/Landingpage/CourseBuying/CourseBuying";
+import CourseBuying from "./Component/Landingpage/CoursePage/CoursePage";
 import BuyingPage from "./Component/Landingpage/BuyingPage/BuyingPage";
 import Purchased from "./Component/User/Purchased/Purchased";
 import Successpayment from "./Component/User/Successpayment/Successpayment";
@@ -96,6 +96,8 @@ import Starttest from "./Component/User/Starttest/Starttest";
 import AIpart from "./Component/Instructor/Question/AIpart/AIpart";
 import Quizview from "./Component/Competitive/Quizview/Quizview";
 import OverallTestview from "./Component/User/OverallTestview/OverallTestview";
+import CoursePage from "./Component/Landingpage/CoursePage/CoursePage";
+
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("Government Exams");
@@ -111,10 +113,9 @@ function App() {
           <Route path="/reset_password/:token" element={<ResetPassword />} />
           <Route path="/inv_register/:id" element={<InvitedRegister />} />
           <Route path="/business_register" element={<CompanyRegister />} />
-
           <Route path="/mytest/:id" element={[<Competitivenavbar />, <Mytest />]}/>
           <Route path="/enrolled/:id" element={[<Competitivenavbar />, <Enrolled />]}/>
-          <Route path="/subcourse/:sub" element={[<Competitivenavbar />, <CourseBuying />]}/>
+         
           <Route path="/exams/payment/:id/:course" element={[<Competitivenavbar />, <BuyingPage />]}/>
           <Route path="/timer/:id/:course/:quizTypeId" element={<TimerPage/>} />
           <Route path="/quizattempt/:id/:course/:quiz_type" element={[<Competitivenavbar />, <QuizPage />]} />
@@ -207,6 +208,8 @@ function App() {
 <Route path="/starttest/:id" element={[<Competitivenavbar/>,<Starttest/>]}/>
 <Route path="/ai" element={<AIpart/>}/>
 <Route path="*" element={[<Competitivenavbar/>,<Banner/>]}/>
+
+<Route path="/subcourse/:categoryId" element={[<Competitivenavbar />, <CoursePage/>]}/>
         </Routes>
       </BrowserRouter>
     </div>

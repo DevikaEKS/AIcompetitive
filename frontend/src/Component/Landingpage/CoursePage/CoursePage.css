@@ -1,4 +1,5 @@
 .testpart{
     background-color: #291571;
     color: #fff;
+    max-width: 100px !important;
 }
