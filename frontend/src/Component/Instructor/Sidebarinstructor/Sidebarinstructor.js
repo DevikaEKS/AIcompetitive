@@ -185,6 +185,21 @@ function Sidebarinstructor({ isOpen, toggleSidebar }) {
         <li>
           <Link
             style={{ textDecoration: "none" }}
+            to={`/instructordashboard/${id}/aiquiz`}
+            className="d-flex"
+          >
+            <FontAwesomeIcon icon={faFile} className="mx-1 text-light" />
+            <motion.span
+              variants={linkVariants}
+              className="text-white text-decoration-none ms-1"
+            >
+             AI QUIZ
+            </motion.span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            style={{ textDecoration: "none" }}
             to={`/instructordashboard/${id}/questionbank`}
             className="d-flex" >
             <FontAwesomeIcon icon={faBook} className="mx-1 text-light" />

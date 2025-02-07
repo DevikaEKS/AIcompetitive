@@ -3,7 +3,6 @@ import JoditEditor from "jodit-react";
 import * as XLSX from "xlsx";
 import axios from "axios"; // Make sure axios is imported
 import "./Question.css";
-import DropdownTreeSelect from "react-dropdown-tree-select";
 import "react-dropdown-tree-select/dist/styles.css";
 import { FaPlus, FaUpload } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
@@ -542,126 +541,6 @@ const Question = () => {
             toolbar: true,
           }}
           onBlur={handleEditorChange}/>
-
-        {/* {questionType === "check" && (
-          <div style={{ marginTop: "10px" }}>
-            {options.map((optionObj, index) => (
-              <div key={index} style={{ marginBottom: "20px" }}>
-                <div className="form-group">
-                  <div className="form-group-inner">
-                <label htmlFor={`option${index + 1}`} className="labelcourse">
-                  Option{index + 1}:
-                </label>
-                <input
-                  className="py-2 fc1 border-0 w-75"
-                  type="text"
-                  placeholder={`Option ${String.fromCharCode(65 + index)}`} 
-                  value={optionObj.option}
-                  onChange={(e) =>
-                    handleOptionChange(index, "option", e.target.value)
-                  }/>
-               <input type="number" placeholder="Enter mark" className="p-1 rounded-1 w-25"/>
-                </div>
-                <label className="my-1 labelcourse text-start">Negative Mark</label>
-<div className="d-flex align-items-center">
-  <label className="form-check-label">
-    <input
-      className="custom-radio mx-2"
-      type="radio"
-      name="negativeMark"
-      value="yes"
-      checked={isNegativeMark}
-      onChange={handleNegativeMarkChange}/>
-    Yes
-  </label>
-  <label className="form-check-label">
-    <input
-      className="custom-radio mx-2"
-      type="radio"
-      name="negativeMark"
-      value="no"
-      checked={!isNegativeMark}
-      onChange={handleNegativeMarkChange}
-    />
-    No
-  </label>
-</div>
-          {isNegativeMark && (
-        <div className="mt-3"> 
-          <input
-            type="number"
-            className="form-control w-25"
-            placeholder="Enter negative mark value"
-            min="0"
-            value={negativeMarkValue}
-            onChange={(e) => setNegativeMarkValue(e.target.value)} />  
-        </div>
-      )}
-               </div>
-                <button
-                  className="m-3 feedbackbtn rounded-2"
-                  onClick={() => toggleFeedback(index)}>
-                  {showFeedback[index] ? "Hide Feedback" : "Add Feedback"}
-                </button>
-                {showFeedback[index] && (
-                  <div className="feedback" style={{ marginTop: "10px" }}>
-                    <label className="labelcourse">Feedback for Option {index + 1}:</label>
-                    <JoditEditor
-                      className="fc1"
-                      value={optionObj.feedback}
-                      config={{
-                        readonly: false,
-                        toolbar: true,
-                      }}
-                      onBlur={(newContent) =>
-                        handleOptionChange(index, "feedback", newContent)
-                      }/>
-                  </div>
-                )}
-              </div>
-            ))}
-
-           
-            <div className="add-option-btn mt-3">
-              <button className="btn btn-outline-danger" onClick={addOption}>
-                <FaPlus /> Add Option
-              </button>
-            </div>
-
-           
-            <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-              <label className="labelcourse">Select Correct Options:</label>
-              <div style={{ marginLeft: "10px"}}>
-                {options.map(
-                  (option, index) =>
-                    option.option.trim() && (
-                      <div key={index}>
-                        <input
-                          type="checkbox"
-                          id={`correctOption${index}`}
-                          checked={correctOptions.includes(option.option)} // Check if this option is in the correctOptions array
-                          onChange={(e) => {
-                            const updatedCorrectOptions = e.target.checked
-                              ? [...correctOptions, option.option] // Add the option if checked
-                              : correctOptions.filter(
-                                  (opt) => opt !== option.option // Remove the option if unchecked
-                                );
-                            setCorrectOptions(updatedCorrectOptions);
-                          }} />
-                        <label
-                          htmlFor={`correctOption${index}`}
-                          style={{ marginLeft: "8px" }}>
-                          {option.option}
-                        </label>
-                      </div>
-                    )
-                )}
-              </div>
-            </div>
-          </div>
-        )} */}
-
-
 
 
 {questionType === "check" && (
