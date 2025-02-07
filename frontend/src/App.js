@@ -97,6 +97,7 @@ import AIpart from "./Component/Instructor/Question/AIpart/AIpart";
 import Quizview from "./Component/Competitive/Quizview/Quizview";
 import OverallTestview from "./Component/User/OverallTestview/OverallTestview";
 import CoursePage from "./Component/Landingpage/CoursePage/CoursePage";
+import AIQuiz from "./Component/Instructor/AIQuiz/AIQuiz";
 
 
 function App() {
@@ -144,6 +145,7 @@ function App() {
             <Route path="courselist" element={<Courselist />} />
             <Route path="addpagecontent" element={[<Coursecontent />]} />
             <Route path="updatepagecontent" element={[<CoursecontentUpdate />]}/>
+            <Route path="aiquiz" element={<AIQuiz/>}/>
             <Route path="test" element={<Testcreation />} />
             <Route path="addmodule" element={[<Modulepage />]} />
             <Route path="addsubmodule" element={<SubModule />} />
